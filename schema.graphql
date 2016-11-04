@@ -1,0 +1,28 @@
+type Stats {
+  minutesPlayed: Float
+  gamesWon: Int
+  winPercentage: Int
+  weaponAccuracy: Float
+  eliminationsPerLife: Float
+  bestMultiKill: Int
+  averageObjectiveKills: Float
+}
+
+type Hero {
+  name: String
+  portrait: String
+  competitiveStats: Stats
+}
+
+type User {
+  name: String
+  portrait: String
+  rank: Int
+  rankImage: String
+  competitiveStats: Stats
+  heroes: [Hero]
+}
+
+type Query {
+  user(battletag: String!, platform: String, region: String): User
+}
